@@ -1,4 +1,3 @@
-import { WeeklyProgress } from "../types/workout";
 import { User } from "../types/user";
 import { get } from "./api";
 

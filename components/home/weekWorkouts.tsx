@@ -20,7 +20,7 @@ export default function WeekWorkouts() {
                   ]}
                 >
                   <Text style={styles.allWorkoutsWorkoutDay}>
-                    {workout.repeat > 0}
+                    {workout.day}
                   </Text>
                 </View>
                 <View style={styles.allWorkoutsWorkoutInfo}>

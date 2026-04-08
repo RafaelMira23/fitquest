@@ -1,4 +1,4 @@
-import { User } from "../types/user";
+import { User } from "@/types/user";
 import { get } from "./api";
 
 export async function getUser(): Promise<User> {

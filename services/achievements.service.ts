@@ -1,4 +1,4 @@
-import { Achievement } from "../types/achievement";
+import { Achievement, UserAchievement } from "@/types/achievements";
 
 export async function getAllAchievements(): Promise<Achievement[]> {
   return [
@@ -42,6 +42,7 @@ export async function getAllAchievements(): Promise<Achievement[]> {
 /* 
 export async function getAllAchievements(): Promise<Achievement[]> {
   return get<Achievement[]>("/achievements");
+}
 */
 
 export async function getAllUserAchievements(userId: string): Promise<UserAchievement[]> {

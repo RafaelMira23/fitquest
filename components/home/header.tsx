@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
-import { useUser } from "../../context/userContext";
+import ProgressBar from "@/components/ui/progressBar";
+import { useUser } from "@/context/userContext";
 import { Flame } from "lucide-react-native";
 
 export default function Header() {
@@ -17,16 +18,7 @@ export default function Header() {
           <View style={styles.startLevel}>
             <Text style={styles.startLevelText}>LVL {user?.level}</Text>
           </View>
-          <View style={styles.startLevelProgressBar}>
-            <View
-              style={[
-                styles.startLevelProgressBarFilled,
-                {
-                  width: `${Math.min(Math.max((xp / xpToNextLevel) * 100, 0), 100)}%`,
-                },
-              ]}
-            ></View>
-          </View>
+          <ProgressBar current={xp} total={xpToNextLevel} color={"#FF775E"} />
         </View>
       </View>
       <View style={styles.startRightContainer}>
@@ -66,19 +58,6 @@ const styles = StyleSheet.create({
   },
   startLevelText: {
     color: "white",
-  },
-  startLevelProgressBar: {
-    flex: 1,
-    height: 10,
-    backgroundColor: "#dfdfdf",
-    borderRadius: 6,
-    overflow: "hidden",
-    position: "relative",
-  },
-  startLevelProgressBarFilled: {
-    height: "100%",
-    backgroundColor: "#FF775E",
-    borderRadius: 6,
   },
   startRightContainer: {
     display: "flex",

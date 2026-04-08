@@ -1,16 +1,15 @@
-import TodayTraining from "../../components/home/todayTraining";
-import { SafeAreaView } from "react-native-safe-area-context";
-import WeekProgress from "../../components/home/weekProgress";
-import WeekWorkouts from "../../components/home/weekWorkouts";
-import WeekCalendar from "../../components/home/weekCalendar";
-import { ScrollView, StyleSheet, View } from "react-native";
-import Header from "../../components/home/header";
-import { useEffect } from "react";
-import { useWorkout } from "../../context/workoutContext";
-import { getAllWorkouts } from "../../services/workout.service";
-import { getUser } from "../../services/user.service";
+import Header from "@/components/home/header";
+import TodayTraining from "@/components/home/todayTraining";
+import WeekCalendar from "@/components/home/weekCalendar";
+import WeekProgress from "@/components/home/weekProgress";
+import WeekWorkouts from "@/components/home/weekWorkouts";
 import { useUser } from "@/context/userContext";
-
+import { useWorkout } from "@/context/workoutContext";
+import { getUser } from "@/services/user.service";
+import { getAllWorkouts } from "@/services/workout.service";
+import { useEffect } from "react";
+import { ScrollView, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function IndexScreen() {
   const { setWorkouts } = useWorkout();
@@ -19,12 +18,10 @@ export default function IndexScreen() {
   useEffect(() => {
     async function loadWorkouts() {
       const data = await getAllWorkouts();
-      console.log("WORKOUTS:", data);
       setWorkouts(data);
     }
     async function loadUser() {
       const data = await getUser();
-      console.log("USER:", data);
       setUser(data);
     }
     loadUser();
@@ -37,7 +34,7 @@ export default function IndexScreen() {
         <TodayTraining />
         <WeekCalendar />
         <WeekProgress />
-        <WeekWorkouts/>
+        <WeekWorkouts />
       </ScrollView>
     </SafeAreaView>
   );

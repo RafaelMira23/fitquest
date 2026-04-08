@@ -1,4 +1,4 @@
-import { WeeklyProgress, Workout } from "../types/workout";
+import { WeeklyProgress, Workout } from "@/types/workout";
 
 export async function getTodayWorkout(): Promise<Workout> {
   return {

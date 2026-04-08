@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import { Workout, WeeklyProgress } from "../types/workout";
+import { Workout, WeeklyProgress } from "@/types/workout";
 
 type WorkoutContextType = {
   workouts: Workout[];

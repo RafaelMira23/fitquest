@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { Clock, ChevronRight, Dumbbell } from "lucide-react-native";
-import { useWorkout } from "../../context/workoutContext";
+import { useWorkout } from "@/context/workoutContext";
 
 export default function TodayTraining() {
   const { workouts } = useWorkout();

@@ -1,7 +1,8 @@
+import { getWeeklyProgress } from "@/services/workout.service";
+import ProgressBar from "@/components/ui/progressBar";
 import { StyleSheet, Text, View } from "react-native";
-import { getWeeklyProgress } from "../../services/workout.service";
-import { useEffect, useState } from "react";
 import { WeeklyProgress } from "@/types/workout";
+import { useEffect, useState } from "react";
 
 export default function WeekProgress() {
   const [weeklyProgress, setWeeklyProgress] = useState<WeeklyProgress | null>(null);
@@ -18,8 +19,6 @@ export default function WeekProgress() {
   const sessions = weeklyProgress?.sessions.length ?? 0;
   const goal = weeklyProgress?.goal ?? 0;
 
-  const progressPercent = goal > 0 ? (sessions / goal) * 100 : 0;
-
   return (
     <View style={styles.weekProgressContainer}>
       <View style={styles.weekProgressHeaderContainer}>
@@ -32,14 +31,7 @@ export default function WeekProgress() {
         </Text>
       </View>
 
-      <View style={styles.weekProgressBarContainer}>
-        <View
-          style={[
-            styles.weekProgressFilled,
-            { width: `${progressPercent}%` },
-          ]}
-        />
-      </View>
+      <ProgressBar current={sessions} total={goal} color={"#19cc69"}  />
     </View>
   );
 }
@@ -69,18 +61,5 @@ const styles = StyleSheet.create({
   },
   weekProgressHeaderWorkouts: {
     color: "#00b303",
-  },
-  weekProgressBarContainer: {
-    flex: 1,
-    height: 10,
-    backgroundColor: "#dfdfdf",
-    borderRadius: 6,
-    overflow: "hidden",
-    position: "relative",
-  },
-  weekProgressFilled: {
-    height: "100%",
-    backgroundColor: "#19cc69",
-    borderRadius: 6,
   },
 });

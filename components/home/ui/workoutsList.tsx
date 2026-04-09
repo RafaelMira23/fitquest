@@ -5,9 +5,9 @@ export default function WorkoutsList({ workouts }: { workouts: any[] }) {
     return (
             <>
               {workouts.map(
-                (workout, index) =>
+                (workout) =>
                   workout.repeat > 0 && (
-                    <Pressable style={styles.allWorkoutsWokout} key={index}>
+                    <Pressable style={styles.allWorkoutsWokout} key={workout.id} onPress={() => console.log(workout)}>
                       <View style={styles.allWorkoutsLeftContainer}>
                         <View
                           style={[

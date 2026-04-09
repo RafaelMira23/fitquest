@@ -1,7 +1,6 @@
-import WorkoutsList from "@/components/ui/workoutsList";
-import { StyleSheet, Text, View } from "react-native";
+import WorkoutsList from "@/components/home/ui/workoutsList";
 import { useWorkout } from "@/context/workoutContext";
-
+import { StyleSheet, Text, View } from "react-native";
 
 export default function WeekWorkouts() {
   const { workouts } = useWorkout();

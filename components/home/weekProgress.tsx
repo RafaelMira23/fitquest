@@ -1,11 +1,13 @@
+import ProgressBar from "@/components/home/ui/progressBar";
 import { getWeeklyProgress } from "@/services/workout.service";
-import ProgressBar from "@/components/ui/progressBar";
-import { StyleSheet, Text, View } from "react-native";
 import { WeeklyProgress } from "@/types/workout";
 import { useEffect, useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function WeekProgress() {
-  const [weeklyProgress, setWeeklyProgress] = useState<WeeklyProgress | null>(null);
+  const [weeklyProgress, setWeeklyProgress] = useState<WeeklyProgress | null>(
+    null,
+  );
 
   useEffect(() => {
     async function loadProgress() {
@@ -22,16 +24,14 @@ export default function WeekProgress() {
   return (
     <View style={styles.weekProgressContainer}>
       <View style={styles.weekProgressHeaderContainer}>
-        <Text style={styles.weekProgressHeaderTitle}>
-          Progresso da semana
-        </Text>
+        <Text style={styles.weekProgressHeaderTitle}>Progresso da semana</Text>
 
         <Text style={styles.weekProgressHeaderWorkouts}>
           {sessions}/{goal}
         </Text>
       </View>
 
-      <ProgressBar current={sessions} total={goal} color={"#19cc69"}  />
+      <ProgressBar current={sessions} total={goal} color={"#19cc69"} />
     </View>
   );
 }
@@ -49,6 +49,8 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-between",
     width: "100%",
+    height: 20,
+    maxHeight: 30,
   },
   weekProgressHeaderContainer: {
     display: "flex",

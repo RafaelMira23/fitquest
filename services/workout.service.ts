@@ -86,7 +86,7 @@ export async function getAllWorkouts(): Promise<Workout[]> {
       ],
     },
     {
-      id: 2,
+      id: 3,
       day: "C",
       repeat: 7,
       name: "TEST #3",

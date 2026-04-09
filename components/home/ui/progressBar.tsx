@@ -15,19 +15,6 @@ export default function ProgressBar(props: ProgressBarProps) {
 }
 
 const styles = StyleSheet.create({
-  /*weekProgressContainer: {
-    backgroundColor: "#f3f3f3",
-    borderColor: "#d7d7d743",
-    borderWidth: 1.5,
-    borderRadius: 12,
-    padding: 16,
-    gap: 12,
-    marginVertical: 20,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    width: "100%",
-  },*/
   progressBarContainer: {
     height: 10,
     backgroundColor: "#dfdfdf",

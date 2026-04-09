@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
-import ProgressBar from "@/components/ui/progressBar";
+import ProgressBar from "@/components/home/ui/progressBar";
 import { useUser } from "@/context/userContext";
 import { Flame } from "lucide-react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function Header() {
   const { user } = useUser();

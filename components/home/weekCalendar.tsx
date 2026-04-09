@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View } from "react-native";
+import WeekDays from "@/components/home/ui/weekDays";
 import { useWorkout } from "@/context/workoutContext";
-import WeekDays from "@/components/ui/weekDays";
+import { StyleSheet, Text, View } from "react-native";
 
 function getWeekDates() {
   const today = new Date();
@@ -20,8 +20,12 @@ function getWeekDates() {
 function formatDateRange(start: Date, end: Date) {
   const startDay = start.getDate();
   const endDay = end.getDate();
-  const startMonth = start.toLocaleDateString("pt-BR", { month: "short" }).replace(".", "");
-  const endMonth = end.toLocaleDateString("pt-BR", { month: "short" }).replace(".", "");
+  const startMonth = start
+    .toLocaleDateString("pt-BR", { month: "short" })
+    .replace(".", "");
+  const endMonth = end
+    .toLocaleDateString("pt-BR", { month: "short" })
+    .replace(".", "");
 
   return `${startDay} ${startMonth} - ${endDay} ${endMonth}`;
 }

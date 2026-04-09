@@ -2,10 +2,13 @@ export interface Achievement {
     id: number;
     name: string;
     description: string;
-    comment: string; 
+    comment: string;
+    tag: string;
+    target: number;
 }
 
 export interface UserAchievement {
     achievementId: number;
-    unlockedAt: Date;
+    quantity: number;
+    unlocked: boolean;
 }
